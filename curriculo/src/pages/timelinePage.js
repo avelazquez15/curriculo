@@ -42,6 +42,7 @@ function TimelinePage(){
   /* hyperlinks */
   const googleTranslateLink = "https://translate.google.com/?sl=la&tl=en&text=curriculo&op=translate&hl=en";
 
+  /* returns JSX to render the header for the page */
   const pageHeader = () => {
     return (
       <Container maxWidth="lg"  style={headerContainerStyling} >
@@ -74,7 +75,8 @@ function TimelinePage(){
     );
   }
 
-  const timelineCardHeader = ({Title="", Company="", Location=""}) => {
+  /* returns JSX for adding header content to a timeline element */
+  const timelineElementHeader = ({Title="", Company="", Location=""}) => {
     return (  <p>
                 <h3 className="vertical-timeline-element-title">{Title}</h3>
                 <h4 className="vertical-timeline-element-subtitle">{Company}</h4>
@@ -82,7 +84,8 @@ function TimelinePage(){
               </p>);
   }
 
-  const timelineCardHeaderAlt = ({Title="", Subtitles="", Company="", Location=""}) => {
+  /* returns JSX for adding header content, including subtitles, to a timeline element */
+  const timelineElementHeaderAlt = ({Title="", Subtitles="", Company="", Location=""}) => {
     return (  <p>
                 <h3 className="vertical-timeline-element-title">{Title}</h3>
                 { Array.isArray(Subtitles) ?
@@ -95,6 +98,7 @@ function TimelinePage(){
             </p>);
   }
 
+  /* return JSX for rendering the career timeline */
   const careerTimeline = () => {
     return(
       <VerticalTimeline  className={"vertical-timeline-custom-line"} >
@@ -106,9 +110,9 @@ function TimelinePage(){
           icon={ <MoreVertIcon/>  }
           iconOnClick={ (e) => {} }
 
-          > {timelineCardHeader({ Title: "Sr. Software Engineer",
-                                                        Company: "Talis Biomedical Inc.",
-                                                        Location: "San Francisco, CA" })}
+          > { timelineElementHeader({ Title: "Sr. Software Engineer",
+                                                            Company: "Talis Biomedical Inc.",
+                                                            Location: "San Francisco, CA" })}
 
           <GitStyling Command={"commit -m"} Message={ "Full stack engineer developing cloud native solutions to meet " +
                                                       "business and software requirements." } />
@@ -123,9 +127,9 @@ function TimelinePage(){
           icon={ <DoneOutlineIcon/> }
           iconOnClick={ (e) => {} }
 
-          > {timelineCardHeader({ Title: "Software Engineer",
-                                                        Company: "Talis Biomedical Inc.",
-                                                        Location: "San Francisco, CA" })}
+          > { timelineElementHeader({ Title: "Software Engineer",
+                                                            Company: "Talis Biomedical Inc.",
+                                                            Location: "San Francisco, CA" })}
 
           <GitStyling Command={"commit -m"} Message={ "Designed, lead, and implemented an analytical data pipeline to " +
                                                       "ingest diagnostic telemetry information." } />
@@ -142,8 +146,8 @@ function TimelinePage(){
           icon={ <DoneOutlineIcon/>  }
           iconOnClick={ (e) => {} }
 
-          > {timelineCardHeader({ Title: "Software Consultant",
-                                                        Location: "Fremont, CA" })}
+          > { timelineElementHeader({ Title: "Software Consultant",
+                                                            Location: "Fremont, CA" })}
 
           <GitStyling Command={"commit -m"} Message={ "Developed a FAFCO Inc. proprietary software to estimate the " +
                                                       "performance of a distribution of Photovoltaic (PV) Solar Panels " +
@@ -165,9 +169,9 @@ function TimelinePage(){
           icon={ <DoneOutlineIcon/> }
           iconOnClick={ (e) => {} }
 
-          > {timelineCardHeader({ Title: "Master's in Computer Engineering",
-                                                        Company: "University of California Davis",
-                                                        Location: "Davis, CA" })}
+          > { timelineElementHeader({ Title: "Master's in Computer Engineering",
+                                                            Company: "University of California Davis",
+                                                            Location: "Davis, CA" })}
 
           <GitStyling Command={"commit -m"} Message={ "Published a Master's thesis titled \"Low Energy Probe Design for " +
                                                       "Restoring the Sense of Bladder Fullness\"."} />
@@ -188,9 +192,9 @@ function TimelinePage(){
           icon={ <DoneOutlineIcon/> }
           iconOnClick={ (e) => {} }
 
-          > {timelineCardHeader({ Title: "Software Developer",
-                                                        Company: "FAFCO, INC.",
-                                                        Location: "Chico, CA" })}
+          > { timelineElementHeader({ Title: "Software Developer",
+                                                            Company: "FAFCO, INC.",
+                                                            Location: "Chico, CA" })}
 
           <GitStyling Command={"commit -m"} Message={ "Deployed production-ready software for Engineering, Sales, " +
                                                       "and Manufacturing departments."} />
@@ -207,9 +211,9 @@ function TimelinePage(){
           icon={ <DoneOutlineIcon/>  }
           iconOnClick={ (e) => {} }
 
-          > {timelineCardHeader({ Title: "Bachelor of Science in Electrical Engineering",
-                                                        Company: "California State University Chico",
-                                                        Location: "Chico, CA" })}
+          > { timelineElementHeader({ Title: "Bachelor of Science in Electrical Engineering",
+                                                            Company: "California State University Chico",
+                                                            Location: "Chico, CA" })}
 
           <GitStyling Command={"commit -m"} Message={ "With my knowledge as an Electrical Engineer I was able to " +
                                                       "develop a \"Smart Bluetooth LE MPPT Meter\" whose purpose was " +
@@ -234,10 +238,9 @@ function TimelinePage(){
           icon={ <DoneOutlineIcon/>  }
           iconOnClick={ (e) => {} }
 
-          > {timelineCardHeader({ Title: "Software Engineering Intern",
-                                                        Company: "FAFCO INC.",
-                                                        Location: "Chico, CA" })}
-
+          > { timelineElementHeader({ Title: "Software Engineering Intern",
+                                                            Company: "FAFCO INC.",
+                                                            Location: "Chico, CA" })}
 
           <GitStyling Command={"commit -m"} Message={ "First exposure to production-ready software. Internship experience " +
                                                       "motivated and inspired me to pursue my dreams of growing " +
@@ -254,10 +257,10 @@ function TimelinePage(){
           icon={ <DoneOutlineIcon/>  }
           iconOnClick={ (e) => {} }
 
-          > {timelineCardHeaderAlt({  Title: "Associate's of Science in;",
-                                                                  Subtitles: ["Computer Science", "Mathematics"],
-                                                                  Company: "Yuba College",
-                                                                  Location: "Marysville, CA" })}
+          > {timelineElementHeaderAlt({ Title: "Associate's of Science in;",
+                                                                    Subtitles: ["Computer Science", "Mathematics"],
+                                                                    Company: "Yuba College",
+                                                                    Location: "Marysville, CA" })}
 
 
           <GitStyling Command={"commit -m"} Message={ "Adds Associates of Science degrees to project."} />
@@ -278,7 +281,7 @@ function TimelinePage(){
           icon={ <MoreHorizIcon/>  }
           iconOnClick={ (e) => {} }
 
-          > {timelineCardHeader({ Title: "Curriculo Project Created"} )}
+          > { timelineElementHeader({ Title: "Curriculo Project Created"} )}
 
           <GitStyling Command={"commit -m"} Message={"Initial commit of Curriculo project."} />
           <GitStyling Command={"push"} />
