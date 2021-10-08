@@ -16,7 +16,7 @@ import GitStyling from "../components/gitStyling";
 
 /* static items*/
 import ProfileImage from '../static/images/AlejandroVelazquez.jpg';
-import Logo from "../static/images/logo3.svg";
+import Logo from "../static/images/logo.svg";
 import '../static/css/vertical-timeline.css'
 
 function TimelinePage(){
