@@ -1,0 +1,5 @@
+/* CUSTOM LINE COLOR */
+/* The line */
+.vertical-timeline.vertical-timeline-custom-line::before {
+  background:rgb(255,215,0);
+}
